@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/30 08:51:46 by tmadau            #+#    #+#             */
-/*   Updated: 2018/05/30 09:11:23 by tmadau           ###   ########.fr       */
+/*   Created: 2018/05/30 11:23:49 by tmadau            #+#    #+#             */
+/*   Updated: 2018/05/30 11:29:52 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_min(int x, int y)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	return (x < y ? x : y);
+	size_t		i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (*(unsigned char*)(s1 + i) != *(unsigned char*)(s2 + i))
+			return (*(unsigned char*)(s1 + i) - *(unsigned char*)(s2 + i));
+		i++;
+	}
+	return (0);
 }

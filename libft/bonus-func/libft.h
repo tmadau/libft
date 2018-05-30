@@ -6,7 +6,7 @@
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 14:23:31 by tmadau            #+#    #+#             */
-/*   Updated: 2018/05/30 09:06:30 by tmadau           ###   ########.fr       */
+/*   Updated: 2018/05/30 11:22:06 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,5 @@ void	ft_putstr_fd(char const *s, int fd);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
-
-int		ft_min(int x, int y);
-int		ft_max(int x, int y);
 
 #endif

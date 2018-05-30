@@ -6,7 +6,7 @@
 #    By: tmadau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 14:02:48 by tmadau            #+#    #+#              #
-#    Updated: 2018/05/30 09:07:41 by tmadau           ###   ########.fr        #
+#    Updated: 2018/05/30 11:21:51 by tmadau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,6 @@ SRCS = $(LIBC)ft_bzero.c \
 	   $(LIBC)ft_memcpy.c \
 	   $(PER)ft_islower.c \
 	   $(PER)ft_isupper.c \
-	   $(PER)ft_min.c \
-	   $(PER)ft_max.c \
 	   $(ADD)ft_memalloc.c \
 	   $(ADD)ft_memdel.c \
 	   $(ADD)ft_putchar.c \
