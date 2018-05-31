@@ -6,7 +6,7 @@
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 14:23:31 by tmadau            #+#    #+#             */
-/*   Updated: 2018/05/30 14:19:45 by tmadau           ###   ########.fr       */
+/*   Updated: 2018/05/31 17:21:59 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void	ft_putstr(char const *s);
 void	ft_putstr_fd(char const *s, int fd);
 
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
+
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
 #endif

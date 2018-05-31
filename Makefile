@@ -6,7 +6,7 @@
 #    By: tmadau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 14:02:48 by tmadau            #+#    #+#              #
-#    Updated: 2018/05/30 17:25:51 by tmadau           ###   ########.fr        #
+#    Updated: 2018/05/31 17:23:09 by tmadau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ CFILES = $(LIBC)ft_bzero.c \
 		 $(LIBC)ft_strcpy.c \
 		 $(LIBC)ft_atoi.c \
 		 $(LIBC)ft_memcpy.c \
+		 $(LIBC)ft_memccpy.c \
 		 $(PER)ft_islower.c \
 		 $(PER)ft_isupper.c \
 		 $(ADD)ft_memalloc.c \
