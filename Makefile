@@ -6,13 +6,15 @@
 #    By: tmadau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 14:02:48 by tmadau            #+#    #+#              #
-#    Updated: 2018/05/31 17:23:09 by tmadau           ###   ########.fr        #
+#    Updated: 2018/06/01 15:42:10 by tmadau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 COM = gcc
+
+CFLAGS = -Wall -Wextra -Werror -c -I .
 
 LIBC = libc-func/
 
@@ -21,10 +23,6 @@ ADD = add-func/
 PER = per-func/
 
 BON = bonus-func/
-
-HED = headers/
-
-CFLAGS += -Wall -Wextra -Werror -I include \
 
 CFILES = $(LIBC)ft_bzero.c \
 		 $(LIBC)ft_isascii.c \
@@ -65,4 +63,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all
+re:fclean all
