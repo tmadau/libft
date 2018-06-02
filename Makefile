@@ -6,7 +6,7 @@
 #    By: tmadau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 14:02:48 by tmadau            #+#    #+#              #
-#    Updated: 2018/06/01 15:42:10 by tmadau           ###   ########.fr        #
+#    Updated: 2018/06/02 16:07:39 by tmadau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,12 @@ CFILES = $(LIBC)ft_bzero.c \
 		 $(ADD)ft_putendl_fd.c \
 		 $(ADD)ft_putstr.c \
 		 $(ADD)ft_putstr_fd.c \
-
+		 $(ADD)ft_strclr.c \
+		 $(ADD)ft_strdel.c \
+		 $(ADD)ft_strnew.c \
+		 $(ADD)ft_striter.c \
+		 $(ADD)ft_striteri.c \
+		 
 OFILES = $(CFILES:.c=.o)
 
 all: $(NAME)
