@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/04 17:21:52 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/04 08:37:35 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/04 14:26:32 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	csbyte[len];
-
-	ft_memcpy(csbyte, src, len);
-	ft_memcpy(dst, csbyte, len);
-	return (dst);
-}
-
-/*void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t		i;
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	size_t	i;
+	unsigned char	*dest;
+	unsigned char	*src;
 
 	i = 0;
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	while (i < len)
+	dest = (unsigned char *)(s1);
+	src = (unsigned char *)(s2);
+	while ((dest[i] || src[i]) && i < n)
 	{
-		csbyte1[i] = csbyte2[i];
+		if ((dest[i]) != (src[i]))
+		{
+			return (dest[i] - src[i]);
+		}
 		i++;
 	}
-	return (dst);
-}*/
+	return ((dest[i]) - (src[i]));
+}

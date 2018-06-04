@@ -16,7 +16,6 @@ char	*ft_strnew(size_t size)
 {
 	char	*string;
 
-/*	string = ft_memalloc(size + 1);*/
 	string = (char *)malloc(sizeof(*string) * size + 1);
 	if (string == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 15:07:58 by tmadau            #+#    #+#             */
-/*   Updated: 2018/05/29 15:27:25 by tmadau           ###   ########.fr       */
+/*   Updated: 2018/06/04 11:58:01 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ char	*ft_strcpy(char *dest, const char *src)
 {
 	int		i;
 
-	i = -1;
-	while (src[++i] != '\0')
+	i = 0;
+	while (src[i] != '\0')
+	{
 		dest[i] = src[i];
+		i++;
+	}
 	dest[i] = '\0';
 	return (dest);
 }

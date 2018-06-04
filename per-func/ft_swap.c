@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/30 11:23:49 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/04 15:24:21 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/04 08:25:28 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/04 08:25:36 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_swap(int *a, int *b)
 {
-	size_t			i;
-	unsigned char	*ssbyte;
-	unsigned char	*dsbyte;
+	int		store;
 
-	i = 0;
-	ssbyte = (unsigned char *)s2;
-	dsbyte = (unsigned char *)s1;
-	while (i < n)
-	{
-		if ((dsbyte[i]) != (ssbyte[i]))
-			return ((dsbyte[i]) - (ssbyte[i]));
-		i++;
-	}
-	return (0);
+	store = *a;
+	*a = *b;
+	*b = store;
 }
