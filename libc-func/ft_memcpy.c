@@ -6,7 +6,7 @@
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 17:23:36 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/04 15:37:23 by tmadau           ###   ########.fr       */
+/*   Updated: 2018/06/05 14:01:12 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*dmema;
 	unsigned char	*smema;
 

@@ -6,7 +6,7 @@
 #    By: tmadau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 14:02:48 by tmadau            #+#    #+#              #
-#    Updated: 2018/06/04 17:33:12 by tmadau           ###   ########.fr        #
+#    Updated: 2018/06/05 16:03:01 by tmadau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,11 @@ CFILES = $(LIBC)ft_bzero.c \
 		 $(LIBC)ft_strcmp.c \
 		 $(LIBC)ft_memcmp.c \
 		 $(LIBC)ft_memmove.c \
+		 $(LIBC)ft_memchr.c \
+		 $(LIBC)ft_strcat.c \
+		 $(LIBC)ft_strncat.c \
 		 $(PER)ft_islower.c \
 		 $(PER)ft_isupper.c \
-		 $(PER)ft_swap.c \
 		 $(ADD)ft_memalloc.c \
 		 $(ADD)ft_memdel.c \
 		 $(ADD)ft_putchar.c \
