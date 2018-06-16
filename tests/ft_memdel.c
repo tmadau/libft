@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/05/28 13:57:59 by tmadau            #+#    #+#             */
+/*   Updated: 2018/05/29 10:37:34 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_memdel(void **ap)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
-
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	if (ap)
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		free(*ap);
+		*ap = (NULL);
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
 }

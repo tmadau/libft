@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/05/28 16:13:07 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/14 12:30:57 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		ft_atoi(const char *str)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	int		i;
+	long	result;
+	int		sign;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	sign = 1;
+	i = 0;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' && ++i)
+		sign = -1;
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		result = result * 10 + (str[i] - '0');
+		i++;
+		if (result < 0 && sign == 1)
+			return (-1);
+		if (result < 0)
+			return (0);
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	return (result * sign);
 }

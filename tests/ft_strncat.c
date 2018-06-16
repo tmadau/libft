@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/04 08:42:03 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/05 15:41:03 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	size_t	bchr1;
+	size_t	bchr2;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	bchr1 = 0;
+	bchr2 = 0;
+	while (s1[bchr1])
+		bchr1++;
+	while (s2[bchr2] && bchr2 < n)
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		s1[bchr1] = s2[bchr2];
+		bchr1++;
+		bchr2++;
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	s1[bchr1] = '\0';
+	return (s1);
 }

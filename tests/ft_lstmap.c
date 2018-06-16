@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/14 18:27:03 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/14 18:44:11 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	t_list		*new;
+	t_list		*list;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	if (!lst)
+		return (NULL);
+	list = f(lst);
+	new = list;
+	while (lst->next)
 	{
-		while (len)
+		lst = lst->next;
+		if (!(list->next = f(lst)))
 		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
+			free(list->next);
+			return (NULL);
 		}
+		list = list->next;
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	return (new);
 }

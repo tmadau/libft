@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/05 17:42:19 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/10 17:15:33 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	size_t	fi;
+	size_t	si;
+	char	*fstr;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	fstr = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	if (fstr == NULL)
+		return (NULL);
+	fi = 0;
+	si = 0;
+	while (s1[si])
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		fstr[fi] = s1[si];
+		fi++;
+		si++;
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	si = 0;
+	while (s2[si])
+	{
+		fstr[fi] = s2[si];
+		fi++;
+		si++;
+	}
+	return (fstr);
 }

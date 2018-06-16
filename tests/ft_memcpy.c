@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/05/29 17:23:36 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/05 14:01:12 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	size_t			i;
+	unsigned char	*dmema;
+	unsigned char	*smema;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	i = 0;
+	dmema = (unsigned char *)dst;
+	smema = (unsigned char *)src;
+	while (i < n)
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		dmema[i] = smema[i];
+		i++;
 	}
-	else
-		ft_memcpy(dst, src, len);
 	return (dst);
 }

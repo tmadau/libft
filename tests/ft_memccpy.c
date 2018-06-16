@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/05/31 15:46:50 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/16 16:41:34 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	size_t			i;
+	unsigned char	*ssbyte;
+	unsigned char	*dsbyte;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	i = 0;
+	ssbyte = (unsigned char *)src;
+	dsbyte = (unsigned char *)dst;
+	while (i < n)
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		dsbyte[i] = ssbyte[i];
+		if (dsbyte[i] == (unsigned char)c)
+			return (dsbyte + i + 1);
+		i++;
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	return (NULL);
 }

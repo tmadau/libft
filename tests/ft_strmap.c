@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/05 17:31:30 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/07 17:59:53 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	size_t	i;
+	char	*newstr;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	if (!s)
+		return (NULL);
+	if (!(newstr = (char*)malloc(ft_strlen(s) + 1)))
+		return (NULL);
+	i = 0;
+	while (*s)
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		newstr[i] = (*f)(*s);
+		i++;
+		s++;
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	newstr[i] = '\0';
+	return (newstr);
 }

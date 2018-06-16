@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/05 17:39:59 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/07 16:15:33 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	size_t		i;
+	const char	*cmpstr1;
+	const char	*cmpstr2;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	i = 0;
+	cmpstr1 = s1;
+	cmpstr2 = s2;
+	if (!s1 || !s2)
+		return (0);
+	while (ft_strlen(cmpstr1) == ft_strlen(cmpstr2))
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		if (ft_strcmp(cmpstr1, cmpstr2) != '\0')
+			return (0);
+		return (1);
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	return (0);
 }

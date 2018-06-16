@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/02 14:35:37 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/10 17:05:57 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strnew(size_t size)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	char	*string;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
-	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
-	}
+	string = (char *)malloc(sizeof(*string) * size + 1);
+	if (string == NULL)
+		return (NULL);
 	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	{
+		ft_bzero(string, size + 1);
+		return (string);
+	}
 }

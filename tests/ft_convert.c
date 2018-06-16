@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/14 10:39:41 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/14 10:42:30 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_convert(long number, int digits, char *str, int neg)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	char	hold;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	str[digits] = '\0';
+	if (number == 0)
+		str[0] = '0';
+	else
 	{
-		while (len)
+		while (number)
 		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
+			hold = number % 10 + '0';
+			str[digits - 1] = hold;
+			digits--;
+			number /= 10;
 		}
 	}
-	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	if (neg)
+		str[0] = '-';
 }

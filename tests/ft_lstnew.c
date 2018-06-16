@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/04 08:58:00 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/06 10:33:32 by tmadau           ###   ########.fr       */
+/*   Created: 2018/06/14 18:27:35 by tmadau            #+#    #+#             */
+/*   Updated: 2018/06/15 11:32:48 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	unsigned char	*csbyte1;
-	unsigned char	*csbyte2;
+	t_list		*flink;
 
-	csbyte1 = (unsigned char *)dst;
-	csbyte2 = (unsigned char *)src;
-	if (csbyte2 < csbyte1)
+	flink = (t_list *)malloc(sizeof(*flink));
+	if (flink == NULL)
+		return (NULL);
+	if (!content)
 	{
-		while (len)
-		{
-			csbyte1[len - 1] = csbyte2[len - 1];
-			len--;
-		}
+		flink->content = NULL;
+		flink->content = 0;
 	}
 	else
-		ft_memcpy(dst, src, len);
-	return (dst);
+	{
+		if (!(flink->content = malloc(content_size)))
+			return (NULL);
+		ft_memcpy(flink->content, content, content_size);
+		flink->content_size = content_size;
+	}
+	flink->next = NULL;
+	return (flink);
 }
