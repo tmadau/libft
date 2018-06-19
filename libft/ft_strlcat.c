@@ -6,7 +6,7 @@
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 08:50:09 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/13 10:16:37 by tmadau           ###   ########.fr       */
+/*   Updated: 2018/06/17 13:01:52 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t		join;
+	size_t		i;
 
-	join = 0;
-	while (*dst)
-	{
-		join++;
-		dst++;
-	}
-	if (join >= dstsize)
+	i = 0;
+	while (dst[i])
+		i++;
+	if (i >= dstsize)
 		return (dstsize + ft_strlen((char *)src));
-	ft_strncat(dst, src, dstsize - join - 1);
-	return (join + ft_strlen((char *)src));
+	ft_strncat(dst, src, dstsize - i - 1);
+	return (i + ft_strlen((char *)src));
 }

@@ -6,7 +6,7 @@
 #    By: tmadau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 14:02:48 by tmadau            #+#    #+#              #
-#    Updated: 2018/06/15 17:30:40 by tmadau           ###   ########.fr        #
+#    Updated: 2018/06/17 13:06:21 by tmadau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) $(CF) $(CFILES) -I $(HF)
-	ar -rc $(NAME) $(OFILES)
+	ar -rcs $(NAME) $(OFILES)
 
 clean:
 	rm -f $(OFILES)
