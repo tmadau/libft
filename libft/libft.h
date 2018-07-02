@@ -6,7 +6,7 @@
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 14:23:31 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/16 17:17:23 by tmadau           ###   ########.fr       */
+/*   Updated: 2018/07/02 12:09:50 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
 void				ft_bzero(void *s, size_t n);
 

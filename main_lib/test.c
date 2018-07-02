@@ -6,7 +6,7 @@
 /*   By: tmadau <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 09:15:08 by tmadau            #+#    #+#             */
-/*   Updated: 2018/06/16 16:25:43 by tmadau           ###   ########.fr       */
+/*   Updated: 2018/06/18 10:07:46 by tmadau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,7 +217,7 @@
 }*/
 
 /*STRMAPI*/
-/*int		main(void)
+int		main(void)
 {
 	char	(*str)(char);
 	char	*str1;
@@ -228,7 +228,7 @@
 	str1 = ft_strmapi("MAKE THIS string upper", *str[i]);
 	printf("print my string = %s\n", str1);
 	return (0);
-}*/
+}
 
 /*STRMAP*/
 /*int		main(void)
@@ -641,7 +641,7 @@
 }*/
 
 /*MEMCCPY*/
-int		main(void)
+/*int		main(void)
 {
 	char	string1[] = "therisariver thatflowsfojrmabiear";
 	char buffer[61];
@@ -653,7 +653,7 @@ int		main(void)
 	*pdest = '\0';
 	printf( "Result: %s\n", buffer );
 	printf( "Length: %lu characters\n", strlen(buffer));
-}
+}*/
 
 /*MEMALLOC*/
 /*int				main(void)

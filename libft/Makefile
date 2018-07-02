@@ -6,7 +6,7 @@
 #    By: tmadau <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 14:02:48 by tmadau            #+#    #+#              #
-#    Updated: 2018/06/17 13:06:21 by tmadau           ###   ########.fr        #
+#    Updated: 2018/07/02 12:11:38 by tmadau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ CFILES = ft_itoa.c ft_putendl_fd.c ft_strequ.c ft_strnequ.c ft_lstdelone.c \
 		 ft_isdigit.c ft_memset.c ft_strcmp.c ft_strncat.c ft_tolower.c \
 		 ft_islower.c ft_putchar.c ft_strcpy.c ft_strncmp.c ft_toupper.c \
 		 ft_isprint.c ft_putchar_fd.c ft_strdel.c ft_strncpy.c ft_lstnew.c \
-		 ft_isupper.c ft_putendl.c ft_strdup.c ft_convert.c \
+		 ft_isupper.c ft_putendl.c ft_strdup.c ft_convert.c get_next_line.c \
 
-HF = libft.h
+HF = libft.h \
 
 OFILES = $(CFILES:.c=.o)
 
