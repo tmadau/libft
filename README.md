@@ -1,4 +1,4 @@
 # libft
 project
 
-Rendering a wire mesh field in a seperate window.
+Recreation of the C standard library used for all future WethinkCode projects in C.
